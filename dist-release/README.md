@@ -46,7 +46,7 @@ Shots taken at 3840×2160 with default options on a 16:9 setup. They live in the
 4. Open Quick Access (`…`) → **CSS Loader** → **Themes** → enable **tvdeck**.
 5. Optional but recommended: in Steam, open **Settings → Customization → Home** and select **Big Art Mode** for the Top Shelf-style hero layout.
 
-If you install through CSS Loader's theme browser instead, use the same folder name, `tvdeck`. Theme assets are served by folder name, so renaming the folder is not supported.
+Keep the extracted folder named `tvdeck`, because theme assets are served by folder name and renaming it is not supported.
 
 ## Options
 

@@ -16,7 +16,7 @@ Based on [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) by **K€YOZ**
 ## Install
 
 1. Install [Decky Loader](https://decky.xyz) and the **CSS Loader** plugin.
-2. Copy this folder to `~/homebrew/themes/tvdeck` (or install “tvdeck” from CSS Loader's theme browser).
+2. Copy this folder to `~/homebrew/themes/tvdeck`.
 3. Quick Access (…) → CSS Loader → enable **tvdeck**.
 4. Recommended: Steam *Settings → Customization → Home → Big Art Mode* for the Apple TV Top Shelf layout.
 

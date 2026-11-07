@@ -16,7 +16,7 @@
 ## 安装
 
 1. 安装 [Decky Loader](https://decky.xyz) 以及 **CSS Loader** 插件。
-2. 把本文件夹复制到 `~/homebrew/themes/tvdeck`（或在 CSS Loader 的主题浏览里安装 “tvdeck”）。
+2. 把本文件夹复制到 `~/homebrew/themes/tvdeck`。
 3. 快捷访问（…）→ CSS Loader → 启用 **tvdeck**。
 4. 推荐：在 Steam *设置 → 自定义 → 主页 → 大画幅模式（Big Art Mode）* 下使用，以获得 Apple TV 顶栏式主界面。
 
