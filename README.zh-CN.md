@@ -51,6 +51,11 @@
 tvdeck 派生自 [**K€YOZ** 的 **tvOS Deck**](https://github.com/zoyekerako/tvos-deck)（上游版本 1.1.0，MIT 许可）。上游版权声明保留在
 [LICENSE](LICENSE) 中，修改部分由 Honchane 完成。
 
+隐藏 tab 的做法沿用 [No Home Tabs by Sims](https://deckthemes.com/themes/view?themeId=1f13929d-cb5b-4ab9-985f-a69504e055fe)（v1.0，2023 年）。
+本项目还参考了 [Switch Like Home by Sims](https://deckthemes.com/themes/view?themeId=9ac2bf60-66c5-4f50-aa6b-f897465ba328)（v1.4，2024 年）
+与 [No Friend Playing Icon by Luna-Terra](https://deckthemes.com/themes/view?themeId=88363437-0fc3-44f7-9ae4-0ced63893aca)（2025 年）。
+三者均为第三方 DeckThemes 主题，均非本仓库作者发布。
+
 ## Deutsch
 
 Ordner nach `~/homebrew/themes/tvdeck` kopieren, in CSS Loader einschalten und in Steam

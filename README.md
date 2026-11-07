@@ -53,6 +53,11 @@ The folder name must stay `tvdeck`: CSS Loader serves theme files by folder name
 tvdeck is derived from [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) by **K€YOZ** (upstream version 1.1.0, MIT licence). The original
 copyright line is retained in [LICENSE](LICENSE); modifications are by Honchane.
 
+The tab-hiding rule follows [No Home Tabs by Sims](https://deckthemes.com/themes/view?themeId=1f13929d-cb5b-4ab9-985f-a69504e055fe) (v1.0, 2023).
+This project also drew on [Switch Like Home by Sims](https://deckthemes.com/themes/view?themeId=9ac2bf60-66c5-4f50-aa6b-f897465ba328) (v1.4, 2024)
+and [No Friend Playing Icon by Luna-Terra](https://deckthemes.com/themes/view?themeId=88363437-0fc3-44f7-9ae4-0ced63893aca) (2025).
+All three are third-party DeckThemes themes not published by this repository's author.
+
 ## Deutsch
 
 Ordner nach `~/homebrew/themes/tvdeck` kopieren, in CSS Loader einschalten und in Steam

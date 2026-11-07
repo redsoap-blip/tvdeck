@@ -101,6 +101,8 @@ Modifications Copyright (c) 2026 Honchane
 
 The full MIT text is in [LICENSE](LICENSE). The original copyright line is retained, and the modification notice is added above it.
 
+The tab-hiding rule follows [No Home Tabs by Sims](https://deckthemes.com/themes/view?themeId=1f13929d-cb5b-4ab9-985f-a69504e055fe) (v1.0, 2023). This project also drew on [Switch Like Home by Sims](https://deckthemes.com/themes/view?themeId=9ac2bf60-66c5-4f50-aa6b-f897465ba328) (v1.4, 2024) and [No Friend Playing Icon by Luna-Terra](https://deckthemes.com/themes/view?themeId=88363437-0fc3-44f7-9ae4-0ced63893aca) (2025). All three are third-party DeckThemes themes not published by this repository's author.
+
 ## Disclaimer
 
 This is an unofficial fan project. It is not affiliated with, endorsed by or sponsored by Valve Corporation, Steam, Apple Inc. or tvOS. "Steam", "Steam Deck", "SteamOS" and "Valve" are trademarks of Valve Corporation. "Apple TV" and "tvOS" are trademarks of Apple Inc. All trademarks belong to their respective owners.
