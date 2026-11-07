@@ -22,6 +22,10 @@ SOFTWARE.
 
 ---
 
-The bundled font "Inter" (tvOS-Deck/fonts/InterVariable.woff2) is
-Copyright (c) 2016 The Inter Project Authors and licensed under the
-SIL Open Font License 1.1 – see tvOS-Deck/fonts/Inter-OFL.txt.
+This distribution does not bundle any font files. Text is rendered with the system
+font stack (`system-ui, sans-serif`) or Steam's own stack ("Motiva Sans"), so no
+font licence applies to this package.
+
+tvdeck is derived from tvOS Deck by K€YOZ, https://github.com/zoyekerako/tvos-deck,
+released under the MIT License reproduced above. That copyright notice and
+permission notice apply to the upstream work and to this derivative.
