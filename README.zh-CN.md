@@ -3,7 +3,7 @@
 为 SteamOS 游戏模式（Steam Machine，16:9 / 4K）、Steam Deck 与大屏幕模式提供 Apple TV / tvOS 风格外观。
 适用于 CSS Loader（Decky Loader）的主题。
 
-基于 **K€YOZ** 的 **tvOS Deck**（MIT 许可）。
+基于 [**K€YOZ** 的 **tvOS Deck**](https://github.com/zoyekerako/tvos-deck)（MIT 许可）。
 
 [English README](README.md)
 
@@ -48,7 +48,7 @@
 
 ## 致谢
 
-tvdeck 派生自 **K€YOZ** 的 **tvOS Deck**（上游版本 1.1.0，MIT 许可）。上游版权声明保留在
+tvdeck 派生自 [**K€YOZ** 的 **tvOS Deck**](https://github.com/zoyekerako/tvos-deck)（上游版本 1.1.0，MIT 许可）。上游版权声明保留在
 [LICENSE](LICENSE) 中，修改部分由 Honchane 完成。
 
 ## Deutsch

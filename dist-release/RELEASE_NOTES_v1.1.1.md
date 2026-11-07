@@ -2,7 +2,7 @@
 
 Release date: 2026-11-07
 
-tvdeck 1.1.1 is an English-language fork of **tvOS Deck** 1.1.0 by K€YOZ. It keeps the upstream visual design and adds a few layout and default changes.
+tvdeck 1.1.1 is an English-language fork of [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) 1.1.0 by K€YOZ. It keeps the upstream visual design and adds a few layout and default changes.
 
 ## Changes in 1.1.1
 
@@ -37,4 +37,4 @@ tvdeck 1.1.1 is an English-language fork of **tvOS Deck** 1.1.0 by K€YOZ. It k
 
 ## Credits
 
-Derived from tvOS Deck by K€YOZ (MIT). Original copyright line retained; modifications by Honchane. See `LICENSE`.
+Derived from [tvOS Deck](https://github.com/zoyekerako/tvos-deck) by K€YOZ (MIT). Original copyright line retained; modifications by Honchane. See `LICENSE`.

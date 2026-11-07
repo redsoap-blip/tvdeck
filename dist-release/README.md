@@ -66,7 +66,7 @@ If you install through CSS Loader's theme browser instead, use the same folder n
 
 ## Differences from tvOS Deck
 
-tvdeck is derived from **tvOS Deck** by **K€YOZ** (upstream version 1.1.0). The main differences in this build:
+tvdeck is derived from [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) by **K€YOZ** (upstream version 1.1.0). The main differences in this build:
 
 | Area | tvOS Deck (upstream) | tvdeck 1.1.1 |
 | --- | --- | --- |
@@ -92,7 +92,7 @@ The rest of the styling, including most CSS rules and token values, comes from u
 
 ## Credits and licence
 
-Derived from **tvOS Deck** by **K€YOZ**, originally released under the MIT licence.
+Derived from [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) by **K€YOZ**, originally released under the MIT licence.
 
 ```
 Copyright (c) 2026 tvOS Deck contributors
