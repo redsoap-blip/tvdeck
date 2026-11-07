@@ -39,7 +39,7 @@ Shots taken at 3840×2160 with default options on a 16:9 setup. They live in the
 ## Installation
 
 1. Install **Decky Loader** and then the **CSS Loader** plugin from Decky's plugin store.
-2. Download the release archive (`tvdeck-1.1.1.zip`) and extract it so that the folder is named `tvdeck`.
+2. Download the release archive (`tvdeck-1.1.2.zip`) and extract it so that the folder is named `tvdeck`.
    The archive is an install-only package (`theme.json`, `LICENSE`, `css/`); it contains no README or screenshots.
 3. Copy that folder to `~/homebrew/themes/tvdeck`.
    The final path should be `~/homebrew/themes/tvdeck/theme.json`.
@@ -68,7 +68,7 @@ If you install through CSS Loader's theme browser instead, use the same folder n
 
 tvdeck is derived from [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) by **K€YOZ** (upstream version 1.1.0). The main differences in this build:
 
-| Area | tvOS Deck (upstream) | tvdeck 1.1.1 |
+| Area | tvOS Deck (upstream) | tvdeck 1.1.2 |
 | --- | --- | --- |
 | Option labels | Partly Chinese (`跟随系统字体`, `隐藏好友正在游玩`) | All labels in English |
 | Font default | SF Pro / Inter (bundled upstream) | System font (no font files bundled) |
@@ -78,7 +78,7 @@ tvdeck is derived from [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) 
 | Home layout | Tabbed content hidden via `no-home-tabs.css` | Same rule, kept intentionally |
 | Friend avatar toggle | Present under a Chinese label, default Yes | Present as "Hide friends playing", default Yes |
 | Label spacing | — | Extra offset between card and game label, used by the bottom-docked mode |
-| Version / author | 1.1.0, K€YOZ | 1.1.1, Honchane |
+| Version / author | 1.1.0, K€YOZ | 1.1.2, Honchane |
 
 The rest of the styling, including most CSS rules and token values, comes from upstream. See the licence section below.
 

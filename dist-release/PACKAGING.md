@@ -7,7 +7,7 @@ This file describes how to build and check the release archive. It does not desc
 The zip must contain a single top-level folder named `tvdeck`, not loose files:
 
 ```
-tvdeck-1.1.1.zip
+tvdeck-1.1.2.zip
 └── tvdeck/
     ├── theme.json
     ├── LICENSE
@@ -54,7 +54,7 @@ tvdeck/
 
 ## File name
 
-`tvdeck-1.1.1.zip` — theme name plus the `version` value from `theme.json`.
+`tvdeck-1.1.2.zip` — theme name plus the `version` value from `theme.json`.
 
 ## Must be included
 
@@ -72,7 +72,7 @@ This yields exactly 22 files: `theme.json` + `LICENSE` + 20 CSS files. The archi
 - `README.zh-CN.md` — Simplified Chinese documentation, same rule as `README.md`.
 - `screenshots/` — images for the repository README only, never in the zip.
 - `dist-release/` — build notes, drafts and this file.
-- Any `.git/`, `.github/` working data, editor folders (`.vscode/`, `.idea/`).
+- Any `.git/`, `.gitignore`, `.github/` working data, editor folders (`.vscode/`, `.idea/`).
 - OS clutter: `.DS_Store`, `Thumbs.db`, `desktop.ini`.
 - Temporary or backup files: `*.tmp`, `*.bak`, `*~`, `*.swp`, `*.log`.
 - The sibling upstream theme folder (`tvOS Deck/`) — it is a separate project and must never be bundled.
@@ -85,14 +85,15 @@ Screenshots live in `screenshots/` and are used by `README.md` in the repository
 Run from the parent directory of the theme, so the zip root is the folder itself:
 
 ```
-cd /home/honchane/homebrew/themes
-zip -r tvdeck-1.1.1.zip tvdeck \
+cd "$HOME/homebrew/themes"      # <themes-dir>: the parent folder of tvdeck/
+zip -r tvdeck-1.1.2.zip tvdeck \
   -x "tvdeck/config_USER.json" \
   -x "tvdeck/README.md" \
   -x "tvdeck/README.zh-CN.md" \
   -x "tvdeck/screenshots/*" \
   -x "tvdeck/dist-release/*" \
   -x "tvdeck/.git/*" \
+  -x "tvdeck/.gitignore" \
   -x "tvdeck/.DS_Store" \
   -x "tvdeck/**/*.tmp" \
   -x "tvdeck/**/*.bak"
@@ -101,7 +102,7 @@ zip -r tvdeck-1.1.1.zip tvdeck \
 Then verify the contents before release:
 
 ```
-unzip -l tvdeck-1.1.1.zip
+unzip -l tvdeck-1.1.2.zip
 ```
 
 The first path component of every entry must be `tvdeck/`.
@@ -116,7 +117,7 @@ CSS Loader installs themes under `~/homebrew/themes/<folder>`. Unzipping the arc
 
 ## Pre-release checklist (manual)
 
-- [ ] `theme.json` parses as JSON; `name` is `tvdeck`, `version` is `1.1.1`, `manifest_version` is `9`, `author` is `Honchane`, and `id` is unchanged.
+- [ ] `theme.json` parses as JSON; `name` is `tvdeck`, `version` is `1.1.2`, `manifest_version` is `9`, `author` is `Honchane`, and `id` is unchanged.
 - [ ] Every path in `inject` and every patch value path exists inside the zip.
 - [ ] `config_USER.json` is absent from the zip.
 - [ ] Zip has a single top-level `tvdeck/` folder and no sibling theme folder.
