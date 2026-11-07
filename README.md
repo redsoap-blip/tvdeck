@@ -3,6 +3,8 @@
 Apple TV / tvOS look for SteamOS Game Mode – Steam Machine (16:9, 4K), Steam Deck and Big Picture.
 A theme for CSS Loader (Decky Loader).
 
+Based on **tvOS Deck** by **K€YOZ** (MIT).
+
 [简体中文说明](README.zh-CN.md)
 
 ## Screenshots
@@ -45,6 +47,11 @@ The folder name must stay `tvdeck`: CSS Loader serves theme files by folder name
 - The theme ships no font files. `System font` resolves to `system-ui, sans-serif`; `Steam (Motiva Sans)` keeps
   Steam's own font stack.
 - Unofficial fan theme, not affiliated with Apple or Valve.
+
+## Credits
+
+tvdeck is derived from **tvOS Deck** by **K€YOZ** (upstream version 1.1.0, MIT licence). The original
+copyright line is retained in [LICENSE](LICENSE); modifications are by Honchane.
 
 ## Deutsch
 
