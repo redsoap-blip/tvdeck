@@ -1,0 +1,10 @@
+Apple TV / tvOS-inspired Game Mode theme for Steam Deck and Big Picture, built for CSS Loader.
+
+steam-deck
+steam-deck-theme
+css-loader
+decky-loader
+steamos
+big-picture
+tvos
+apple-tv

@@ -1,0 +1,18 @@
+/* tvOS Deck – Option „隐藏好友正在游玩“ / „Freunde-spielen-Freunde-Icons ausblenden“
+   Wird nur injiziert, wenn der Schalter im CSS Loader auf „Yes“ steht
+   (Standard: Yes).
+
+   Ausblenden der Freundes-Avatar-Leiste auf den AppPortrait-Karten
+   (`appportrait_FriendsBar` + `appportrait_IconsView`): Freunde, die das
+   jeweilige Spiel gerade spielen, erscheinen als kleine Avatare (plus „+N“)
+   unten rechts auf der Karte – u. a. bei den letzten Spielen auf der
+   Startseite, im Bibliotheksraster, in „Als Nächstes“, Downloads,
+   Freundesaktivität und auf der Spiel-Detailseite.
+
+   Kein `!important` nötig: Steam setzt auf `appportrait_FriendsBar` nur
+   `display: flex` (1 Klasse, 0,1,0); dieser Selektor hat 3 Klassen (0,3,0)
+   und gewinnt. Es gibt keine konkurrierende `display`-Regel – anders als
+   bei der Tab-Leiste, wo `.BigArtMode … .Pinned { opacity: .75 }` dazwischenfunkt. */
+.BasicUI .appportrait_FriendsBar.appportrait_IconsView {
+  display: none;
+}

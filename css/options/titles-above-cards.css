@@ -1,0 +1,36 @@
+/* Spieltitel über den Kacheln statt darunter.
+   Jede Kachel bringt bereits einen eigenen Label-Wrapper mit, Steam blendet
+   nur den der fokussierten Karte ein – daher genügt eine reine Verschiebung,
+   ohne eigene Fokus-Logik. Spezifität 0,4,0: überschreibt die Regeln aus
+   home.css (position: relative / translateY(--tvdeck-label-gap)). */
+
+/* Die Kopfzeile „Zuletzt gespielt“ wird überflüssig, sobald der Name an der
+   Kachel steht. Spezifität 0,3,0 – kein !important nötig, home.css setzt
+   display für diesen Container nicht. */
+.gamepadhome_RecentSection_39tNv.Panel
+  .gamepadhomerecentgames_RecentGamesHeader {
+  display: none;
+}
+
+/* Unterkante des Labels an die Kacheloberkante hängen: der Block wächst nach
+   oben, die tatsächliche Label-Höhe (59,5 px mit „unten ausrichten“, 56,1 px
+   ohne) muss dafür nicht bekannt sein. */
+.gamepadhome_RecentSection_39tNv.Panel
+  .gamepadhomerecentgames_RecentGamesInnerContainer
+  .basicgamecarousel_CarouselGameLabelWrapper {
+  position: absolute;
+  bottom: calc(100% + var(--tvdeck-label-gap));
+  transform: none;
+  width: max-content;
+  max-width: min(42vw, 420px);
+}
+
+/* Label-Zone oberhalb der Kartenreihe freihalten.
+   60px = 52px label-min-height + 4px Innenabstand unten (recent-at-bottom)
+   + 4px Reserve. Die oberen 14px Innenabstand des Labels dürfen am Grid-Rand
+   abgeschnitten werden – dort steht kein Text. */
+.gamepadhome_RecentSection_39tNv.Panel
+  .gamepadhomerecentgames_RecentGamesInnerContainer
+  .ReactVirtualized__Grid {
+  padding-top: calc(var(--tvdeck-label-gap) + 60px);
+}

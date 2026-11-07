@@ -1,0 +1,24 @@
+# User-local CSS Loader configuration
+config_USER.json
+
+# Build output and drafts
+dist-release/
+*.zip
+
+# Git and editor metadata
+.git/
+.vscode/
+.idea/
+
+# OS clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and backup files
+*.tmp
+*.bak
+*~
+*.swp
+*.swo
+*.log

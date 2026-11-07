@@ -1,0 +1,63 @@
+/* Recent Games: Kartenzeile + Spielname/Laufzeit unten andocken.
+   Nur aktiv, wenn die Option "Recent Games At Bottom" auf "Yes" steht.
+   Das Vollbild-Hintergrundbild steuert separat "recent-bg-fullscreen.css". */
+
+/* 1) Der Abschnitt selbst positioniert nur das Karten-Cluster. */
+.gamepadhome_RecentSection_39tNv {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+  overflow: visible;
+  /* Platz für die per translateY(--tvdeck-label-gap) nach unten geschobene
+     Label-Zone, sonst fällt die zweite Zeile (Spielzeit) aus dem Viewport. */
+  padding-bottom: calc(var(--tvdeck-label-gap) + 8px);
+  box-sizing: border-box;
+}
+
+/* 2) Container kompakt halten: keine 24vh-Padding-Krücke und keine
+      Big-Art-Höhe mehr, damit Überschrift + Kartenzeile als Cluster unten sitzen. */
+.gamepadhome_RecentSection_39tNv .gamepadhomerecentgames_RecentGamesContainer {
+  height: auto !important;
+  padding-top: 0 !important;
+}
+
+/* 3) Fokus/Tastatur wieder erlauben, ohne dass die Bildebene Klicks schluckt. */
+.gamepadhome_RecentSection_39tNv .gamepadhomerecentgames_RecentGamesInnerContainer {
+  pointer-events: auto;
+}
+
+/* 4) "最近游戏"-Überschrift sichtbar halten (Standard blendet sie per
+      HeaderExit auf opacity:0 aus). */
+.gamepadhome_RecentSection_39tNv .gamepadhomerecentgames_RecentGamesHeaderLabel {
+  opacity: 0.7 !important;
+}
+
+/* 5) Label-Zone (Spielname + Spielzeit) nicht beschneiden: die feste Höhe von
+      52px plus translateY reicht für zwei Zeilen nicht aus. */
+.gamepadhome_RecentSection_39tNv .gamepadhomerecentgames_RecentGamesContainer,
+.gamepadhome_RecentSection_39tNv .gamepadhomerecentgames_RecentGamesInnerContainer,
+.gamepadhome_RecentSection_39tNv .basicgamecarousel_CarouselGameLabel,
+.gamepadhome_RecentSection_39tNv .basicgamecarousel_CarouselGameLabelWrapper {
+  overflow: visible !important;
+}
+
+.gamepadhome_RecentSection_39tNv .basicgamecarousel_CarouselGameLabelWrapper {
+  height: auto !important;
+  min-height: 52px;
+  padding-bottom: 4px;
+}
+
+/* 6) Das große Hintergrundbild bleibt oben, wenn nur "at bottom" aktiv ist.
+      Geometrie: Höhe = Clusterhöhe (100%) + ursprüngliches 24vh-Padding,
+      Verschiebung hebt es exakt auf y=0 des Viewports; das 20px-Padding des
+      Abschnitts (Label-Zone) wird mit eingerechnet.
+      Bei aktivem Vollbild-Schalter (height:100vh) wird diese Regel von der
+      spezifischeren Regel in recent-bg-fullscreen.css neutralisiert. */
+.gamepadhome_RecentSection_39tNv .gamepadhomerecentgames_RecentGamesBackgroundContainer {
+  --tvdeck-art-pad: clamp(54px, 24vh, 210px);
+  height: calc(100% + var(--tvdeck-art-pad));
+  transform: translateY(calc(100% - 100vh - var(--tvdeck-art-pad) + var(--tvdeck-label-gap) + 8px));
+}

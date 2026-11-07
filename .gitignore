@@ -1,0 +1,24 @@
+# Per-user CSS Loader settings (machine-specific)
+config_USER.json
+
+# Built release archives are upload artifacts, not tracked
+dist-release/*.zip
+
+# Editor folders
+.vscode/
+.idea/
+
+# OS clutter
+.DS_Store
+Thumbs.db
+Thumbs.db:encryptable
+desktop.ini
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.orig
+*~
+*.swp
+*.swo
+*.log
