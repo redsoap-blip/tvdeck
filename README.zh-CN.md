@@ -15,12 +15,22 @@
 
 ## 安装
 
-1. 安装 [Decky Loader](https://decky.xyz) 以及 **CSS Loader** 插件。
-2. 把本文件夹复制到 `~/homebrew/themes/tvdeck`。
+两种方式都需要先安装 [Decky Loader](https://decky.xyz) 以及 **CSS Loader** 插件。
+
+### 用最新 Release（推荐）
+
+1. 从[最新 Release](../../releases/latest) 下载主题压缩包。
+2. 解压后把得到的文件夹复制到 `~/homebrew/themes/tvdeck`，最终主题清单应位于 `~/homebrew/themes/tvdeck/theme.json`。
 3. 快捷访问（…）→ CSS Loader → 启用 **tvdeck**。
 4. 推荐：在 Steam *设置 → 自定义 → 主页 → 大画幅模式（Big Art Mode）* 下使用，以获得 Apple TV 顶栏式主界面。
 
-文件夹名必须保持 `tvdeck`：CSS Loader 按文件夹名提供主题文件。
+### 手动安装
+
+1. 把本文件夹复制到 `~/homebrew/themes/tvdeck`。
+2. 快捷访问（…）→ CSS Loader → 启用 **tvdeck**。
+3. 推荐：在 Steam *设置 → 自定义 → 主页 → 大画幅模式（Big Art Mode）* 下使用，以获得 Apple TV 顶栏式主界面。
+
+文件夹名必须保持 `tvdeck`：CSS Loader 按文件夹名提供主题文件。Release 压缩包解压后本身就是这个文件夹名。
 
 ## 选项
 

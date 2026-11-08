@@ -59,7 +59,7 @@ tvdeck/
 ## Must be included
 
 - `theme.json` (manifest, patches, id, author, version).
-- `LICENSE` with both copyright lines (MIT requires the licence text to travel with the distributed files).
+- `LICENSE` carrying the upstream MIT text and copyright notice (MIT requires the licence text to travel with the distributed files). The modification statement is documented in the README, not inside `LICENSE`.
 - Every file under `css/` and `css/options/` referenced by `theme.json`.
 - No font files: the theme ships none, `System font` resolves through `system-ui, sans-serif` at runtime.
 
@@ -133,7 +133,7 @@ CSS Loader installs themes under `~/homebrew/themes/<folder>`. Unzipping the arc
 - [ ] Zip holds exactly 22 files (theme.json + LICENSE + 20 CSS) and only the folders `tvdeck/`, `tvdeck/css/`, `tvdeck/css/options/`.
 - [ ] Zip contains no `README.md` and no `screenshots/` entry (install-only package).
 - [ ] Screenshots in the repository are current; they are referenced by the repo README only.
-- [ ] Confirm the MIT licence text and both copyright lines are present in the zip.
+- [ ] Confirm the MIT licence text and the upstream copyright notice (`Copyright (c) 2026 tvOS Deck contributors`) are present in the zip.
 - [ ] Confirm README credits K€YOZ and tvOS Deck, and contains the Valve/Apple disclaimer.
 - [ ] Confirm no Valve, Steam, Apple or tvOS logos or trademark assets are bundled.
 - [ ] Review `repo-description.txt`: first line ≤120 characters, topics lowercase and hyphenated.
