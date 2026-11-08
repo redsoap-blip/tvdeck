@@ -13,17 +13,24 @@
   --tvdeck-row-scale: 1;
   --tvdeck-qam-inset: 8px;
   position: relative;
+  /* Der 8-px-Rand oben/unten wird per Layout erzeugt, nicht per clip-path:
+     sonst bleibt die Inhaltsbox 8 px höher als die sichtbare Karte und
+     Kopfzeile (Uhr), Decky-Liste und „A Auswählen“-Leiste werden
+     angeschnitten. Links/rechts weiterhin nur per clip-path, damit die
+     854-px-Innenbreite unverändert bleibt. */
+  height: calc(100% - 2 * var(--tvdeck-qam-inset));
+  margin: var(--tvdeck-qam-inset) 0;
   background: var(--tvdeck-glass-sheen), var(--tvdeck-glass-solid);
-  clip-path: inset(var(--tvdeck-qam-inset) calc(100% - min(100vw, 100%) + var(--tvdeck-qam-inset))
-    var(--tvdeck-qam-inset) var(--tvdeck-qam-inset) round var(--tvdeck-r-xl));
+  clip-path: inset(0 calc(100% - min(100vw, 100%) + var(--tvdeck-qam-inset)) 0
+    var(--tvdeck-qam-inset) round var(--tvdeck-r-xl));
 }
 
 /* Lichtkante entlang des sichtbaren Panels */
 .quickaccessmenu_QuickAccessMenu::after {
   content: "";
   position: absolute;
-  top: var(--tvdeck-qam-inset);
-  bottom: var(--tvdeck-qam-inset);
+  top: 0;
+  bottom: 0;
   left: var(--tvdeck-qam-inset);
   width: calc(min(100vw, 100%) - 2 * var(--tvdeck-qam-inset));
   border-radius: var(--tvdeck-r-xl);

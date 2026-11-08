@@ -346,10 +346,38 @@ button.gamepaddropdown_DropDownControlButton.DialogButton {
   background: var(--tvdeck-glass-thick);
   backdrop-filter: var(--tvdeck-backdrop);
   border-radius: var(--tvdeck-r-xl);
-  padding: 10px;
-  box-shadow: var(--tvdeck-panel-shadow), var(--tvdeck-glass-edge);
+  /* 内边距：实测原为 10px，首/末项高亮胶囊（12px 圆角 + 聚焦时 scale(1.03)）
+     与面板 28px 圆角之间只剩约 3.9px 空隙。改用主题标签间距 ×1.5 = 18px，
+     四角留白约 13px，和标题那条 margin-bottom 的节奏保持一致；
+     想再调只改倍数（×1 = 12px，×1.25 = 15px，×1.5 = 18px）。 */
+  padding: calc(var(--tvdeck-label-gap) * 1.5);
+  /* 外阴影不放在面板上（Chromium 会把圆角外、矩形内的那一小块填成硬边深色），
+     改由容器上的独立图层承载，见下面的 ::before。这里只保留 inset 玻璃边缘高光。 */
+  box-shadow: var(--tvdeck-glass-edge);
   filter: none;
   animation: tvdeck-pop 0.26s var(--tvdeck-ease) both;
+}
+
+/* 承载外阴影的独立图层：与面板同圆角、同尺寸，压在内容之下，不参与交互。
+   - position: relative：实测该容器是 position: static，绝对定位的 ::before 没有定位基准；
+   - overflow: visible：原来的 overflow: hidden 会按矩形把阴影硬切成一圈硬边；
+   - isolation: isolate：让 z-index: -1 只在本容器内生效，不压到页面其它图层。
+   这层本身不做 transform/动画（避免被提成合成层后阴影按矩形栅格化），
+   面板的 tvdeck-pop 动画保持原样，阴影随面板一起出现。 */
+.gamepadcontextmenu_BasicContextMenuContainer {
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.gamepadcontextmenu_BasicContextMenuContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--tvdeck-r-xl);
+  box-shadow: var(--tvdeck-panel-shadow);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .gamepadcontextmenu_contextMenuContents > :first-child {
@@ -436,6 +464,10 @@ button.gamepaddropdown_DropDownControlButton.DialogButton {
   font-size: 20px;
   letter-spacing: -0.01em;
   text-transform: none;
+  /* 标题与面板之间的留白：实测原本为 0px，标题文字框（27.3px 高）还比行盒(22px)
+     多出约 2.6px，会压到面板顶边。用主题的标签间距基准 ×1.5 = 18px，
+     想再调只改这个倍数（×1 = 12px，×2 = 24px），不引入新的硬编码数字。 */
+  margin-bottom: calc(var(--tvdeck-label-gap) * 1.5);
 }
 
 /* --------------------------------------------------------------------------
