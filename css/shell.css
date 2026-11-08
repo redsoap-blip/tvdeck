@@ -45,6 +45,14 @@
 .header_CurrentUserAvatar img {
   border-radius: 50%;
   overflow: hidden;
+  /* 焦点胶囊宽度由内容撑开：头像项 = 头像 32px + 外壳左右 padding 各 10px。
+     实测 Steam 原生还给头像外壳加了 margin-right: 10px（留给语音状态条
+     InVoiceChat::after / avatarStatus 的右侧溢出区），于是胶囊变成
+     32 + 10 + 20 = 62px（约 1.9 倍头像宽），右侧比左侧多 10px 空白，
+     和地球/时钟那两个对称胶囊不一致。这里把这段预留空白收掉，
+     胶囊回到 32 + 20 = 52px，左右各 10px 对称。
+     语音状态条与在线状态点仍然画在头像右下角外侧 5px 内，不会被裁掉。 */
+  margin-right: 0;
 }
 
 .header_HeaderDownloadContainer .header_HeaderAppPortraitContainer .header_HeaderDownloadProgressBarBackground {

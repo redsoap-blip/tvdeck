@@ -7,7 +7,7 @@ This file describes how to build and check the release archive. It does not desc
 The zip must contain a single top-level folder named `tvdeck`, not loose files:
 
 ```
-tvdeck-1.1.3.zip
+tvdeck-1.1.4.zip
 └── tvdeck/
     ├── theme.json
     ├── LICENSE
@@ -54,7 +54,7 @@ tvdeck/
 
 ## File name
 
-`tvdeck-1.1.3.zip` — theme name plus the `version` value from `theme.json`.
+`tvdeck-1.1.4.zip` — theme name plus the `version` value from `theme.json`.
 
 ## Must be included
 
@@ -86,7 +86,7 @@ Run from the parent directory of the theme, so the zip root is the folder itself
 
 ```
 cd "$HOME/homebrew/themes"      # <themes-dir>: the parent folder of tvdeck/
-zip -r tvdeck-1.1.3.zip tvdeck \
+zip -r tvdeck-1.1.4.zip tvdeck \
   -x "tvdeck/config_USER.json" \
   -x "tvdeck/README.md" \
   -x "tvdeck/README.zh-CN.md" \
@@ -102,7 +102,7 @@ zip -r tvdeck-1.1.3.zip tvdeck \
 Then verify the contents before release:
 
 ```
-unzip -l tvdeck-1.1.3.zip
+unzip -l tvdeck-1.1.4.zip
 ```
 
 The first path component of every entry must be `tvdeck/`.
@@ -117,7 +117,7 @@ CSS Loader installs themes under `~/homebrew/themes/<folder>`. Unzipping the arc
 
 ## Pre-release checklist (manual)
 
-- [ ] `theme.json` parses as JSON; `name` is `tvdeck`, `version` is `1.1.3`, `manifest_version` is `9`, `author` is `Honchane`, and `id` is unchanged.
+- [ ] `theme.json` parses as JSON; `name` is `tvdeck`, `version` is `1.1.4`, `manifest_version` is `9`, `author` is `Honchane`, and `id` is unchanged.
 - [ ] Every path in `inject` and every patch value path exists inside the zip.
 - [ ] `config_USER.json` is absent from the zip.
 - [ ] Zip has a single top-level `tvdeck/` folder and no sibling theme folder.
