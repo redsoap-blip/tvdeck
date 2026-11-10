@@ -46,6 +46,8 @@ The folder name must stay `tvdeck`: CSS Loader serves theme files by folder name
 | Hide friends playing | Yes · No | Yes |
 | Recent Games At Bottom | Yes · No | Yes |
 | Titles Above Cards | Yes · No | Yes |
+| Home Card Lift | Yes · No | Yes |
+| Play Caret Focus | Yes · No | Yes |
 
 ## Notes
 

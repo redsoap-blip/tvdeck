@@ -46,6 +46,8 @@
 | Hide friends playing（隐藏好友动态） | Yes · No | Yes |
 | Recent Games At Bottom（最近游戏置底） | Yes · No | Yes |
 | Titles Above Cards（标题上移） | Yes · No | Yes |
+| Home Card Lift（卡片浮起） | Yes · No | Yes |
+| Play Caret Focus（开始游戏箭头聚焦高亮） | Yes · No | Yes |
 
 ## 说明
 

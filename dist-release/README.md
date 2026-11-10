@@ -26,6 +26,7 @@ Shots taken at 3840×2160 with default options on a 16:9 setup. They live in the
 - Optional **Recent Games At Bottom** mode that docks the recent-games row to the bottom edge of the screen while keeping the artwork full-bleed.
 - Optional **Titles Above Cards** mode that moves the focused game's label above the card row and hides the "Recent Games" header.
 - Optional **Home Card Lift** mode, on by default, that rounds, clips and lifts the Home/Library cards.
+- Optional **Play Caret Focus** mode, on by default, that gives the Play button's dropdown arrow a solid dark block while focused, so the two halves of the button stay distinguishable.
 - Optional switch to hide friend avatars on game cards ("Hide friends playing").
 - Optional switch for tabular figures, so clock, battery and download numbers stop shifting.
 - Custom styling for the Main Menu, Quick Access, notifications/toasts, keyboard and settings screens.
@@ -42,7 +43,7 @@ Shots taken at 3840×2160 with default options on a 16:9 setup. They live in the
 ## Installation
 
 1. Install **Decky Loader** and then the **CSS Loader** plugin from Decky's plugin store.
-2. Download the release archive (`tvdeck-1.1.8.zip`) and extract it so that the folder is named `tvdeck`.
+2. Download the release archive (`tvdeck-1.1.9.zip`) and extract it so that the folder is named `tvdeck`.
    The archive is an install-only package (`theme.json`, `LICENSE`, `css/`); it contains no README or screenshots.
 3. Copy that folder to `~/homebrew/themes/tvdeck`.
    The final path should be `~/homebrew/themes/tvdeck/theme.json`.
@@ -66,12 +67,13 @@ Keep the extracted folder named `tvdeck`, because theme assets are served by fol
 | Recent Games At Bottom | Yes · No | Yes | Pins the recent-games row and its labels to the bottom edge; the section background still covers the full window height. |
 | Titles Above Cards | Yes · No | Yes | Hides the "Recent Games" header and moves the focused game's label (name, 2-week playtime, friends playing) above the card row; the label is anchored to the card's top edge, so no fixed offset is used. Combined with `Recent Games At Bottom` the row stays docked at the bottom and the label sits above it; the label zone above the row is reserved by padding, so the first row is not covered. With `No`, labels stay below the cards, as in vanilla Steam. |
 | Home Card Lift | Yes · No | Yes | Rounds the Home/Library cards to 12px, clips the artwork so the corners are really cut, adds a top highlight and a 1px inner contour, and lifts the card with a soft shadow. With `No`, cards keep Steam's square corners. |
+| Play Caret Focus | Yes · No | Yes | On the game detail page, turns the dropdown arrow segment of the "Play" button into a solid `#0e141b` block with a white triangle while it is focused, so it reads as clearly different from focusing the Play label. With `No`, the arrow segment stays on tvdeck's white focus background and is hard to tell apart from the label. |
 
 ## Differences from tvOS Deck
 
 tvdeck is derived from [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) by **K€YOZ** (upstream version 1.1.0). The main differences in this build:
 
-| Area | tvOS Deck (upstream) | tvdeck 1.1.8 |
+| Area | tvOS Deck (upstream) | tvdeck 1.1.9 |
 | --- | --- | --- |
 | Option labels | Partly Chinese (`跟随系统字体`, `隐藏好友正在游玩`) | All labels in English |
 | Font control | Bundled SF Pro / Inter | No font stacks; text keeps Steam's fonts |
@@ -79,12 +81,13 @@ tvdeck is derived from [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) 
 | Recent Games At Bottom | Not available | New optional bottom-docked mode |
 | Titles Above Cards | Not available | New optional above-card label mode |
 | Home Card Lift | Not available | New optional rounding/clipping mode, on by default |
+| Play Caret Focus | Not available | New optional play-caret highlight, on by default |
 | Fullscreen recent background | Optional switch | Removed |
 | Tabular figures | Not available | New optional switch, on by default |
 | Home layout | Tabbed content hidden via `no-home-tabs.css` | Same rule, kept intentionally |
 | Friend avatar toggle | Present under a Chinese label, default Yes | Present as "Hide friends playing", default Yes |
 | Label spacing | — | Extra offset between card and game label, used by the bottom-docked mode |
-| Version / author | 1.1.0, K€YOZ | 1.1.8, Honchane |
+| Version / author | 1.1.0, K€YOZ | 1.1.9, Honchane |
 
 The rest of the styling, including most CSS rules and token values, comes from upstream. See the licence section below.
 

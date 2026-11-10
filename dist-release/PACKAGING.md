@@ -7,7 +7,7 @@ This file describes how to build and check the release archive. It does not desc
 The zip must contain a single top-level folder named `tvdeck`, not loose files:
 
 ```
-tvdeck-1.1.8.zip
+tvdeck-1.1.9.zip
 └── tvdeck/
     ├── theme.json
     ├── LICENSE
@@ -31,6 +31,7 @@ tvdeck-1.1.8.zip
             ├── reduce-transparency.css
             ├── titles-above-cards.css
             ├── home-card-lift.css
+            ├── play-caret-focus.css
             └── tabular-nums.css
 ```
 
@@ -53,7 +54,7 @@ tvdeck/
 
 ## File name
 
-`tvdeck-1.1.8.zip` — theme name plus the `version` value from `theme.json`.
+`tvdeck-1.1.9.zip` — theme name plus the `version` value from `theme.json`.
 
 ## Must be included
 
@@ -62,7 +63,7 @@ tvdeck/
 - Every file under `css/` and `css/options/` referenced by `theme.json`.
 - No font assets and no `font-family` declarations: typography is left to Steam and to Decky's font plugin.
 
-This yields exactly 21 files: `theme.json` + `LICENSE` + 19 CSS files. The archive is an install-only package for CSS Loader.
+This yields exactly 22 files: `theme.json` + `LICENSE` + 20 CSS files. The archive is an install-only package for CSS Loader.
 
 ## Must be excluded
 
@@ -85,7 +86,7 @@ Run from the parent directory of the theme, so the zip root is the folder itself
 
 ```
 cd "$HOME/homebrew/themes"      # <themes-dir>: the parent folder of tvdeck/
-zip -r tvdeck-1.1.8.zip tvdeck \
+zip -r tvdeck-1.1.9.zip tvdeck \
   -x "tvdeck/config_USER.json" \
   -x "tvdeck/README.md" \
   -x "tvdeck/README.zh-CN.md" \
@@ -101,7 +102,7 @@ zip -r tvdeck-1.1.8.zip tvdeck \
 Then verify the contents before release:
 
 ```
-unzip -l tvdeck-1.1.8.zip
+unzip -l tvdeck-1.1.9.zip
 ```
 
 The first path component of every entry must be `tvdeck/`.
@@ -116,7 +117,7 @@ CSS Loader installs themes under `~/homebrew/themes/<folder>`. Unzipping the arc
 
 ## Pre-release checklist (manual)
 
-- [ ] `theme.json` parses as JSON; `name` is `tvdeck`, `version` is `1.1.8`, `manifest_version` is `9`, `author` is `Honchane`, and `id` is unchanged.
+- [ ] `theme.json` parses as JSON; `name` is `tvdeck`, `version` is `1.1.9`, `manifest_version` is `9`, `author` is `Honchane`, and `id` is unchanged.
 - [ ] Every path in `inject` and every patch value path exists inside the zip.
 - [ ] `config_USER.json` is absent from the zip.
 - [ ] Zip has a single top-level `tvdeck/` folder and no sibling theme folder.
@@ -129,9 +130,10 @@ CSS Loader installs themes under `~/homebrew/themes/<folder>`. Unzipping the arc
 - [ ] Confirm default options match the README table.
 - [ ] Font check: `grep -rn font-family css/` returns nothing; no font file is present in the zip, so Decky's font plugin keeps control.
 - [ ] `Home Card Lift` defaults to `Yes` and injects `css/options/home-card-lift.css`; with `No` the cards fall back to Steam's square corners.
+- [ ] `Play Caret Focus` defaults to `Yes` and injects `css/options/play-caret-focus.css`; with `No` the Play button's dropdown arrow falls back to tvdeck's white focus background.
 - [ ] `Tabular Numbers` defaults to `Yes` and injects `css/options/tabular-nums.css`; with `No` the clock, battery and download numbers keep proportional digits.
 - [ ] Check against the current Steam client on the test device; do not claim a specific Steam version in the README.
-- [ ] Zip holds exactly 21 files (theme.json + LICENSE + 19 CSS) and only the folders `tvdeck/`, `tvdeck/css/`, `tvdeck/css/options/`.
+- [ ] Zip holds exactly 22 files (theme.json + LICENSE + 20 CSS) and only the folders `tvdeck/`, `tvdeck/css/`, `tvdeck/css/options/`.
 - [ ] Zip contains no `README.md` and no `screenshots/` entry (install-only package).
 - [ ] Screenshots in the repository are current; they are referenced by the repo README only.
 - [ ] Confirm the MIT licence text and the upstream copyright notice (`Copyright (c) 2026 tvOS Deck contributors`) are present in the zip.

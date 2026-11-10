@@ -1,0 +1,44 @@
+/* Play Caret Focus —— tvdeck 选项（默认 Yes）
+ *
+ * 解决的问题：
+ *   tvdeck 的 game.css 把焦点态统一成「白底 + 深色图标」，箭头段聚焦时
+ *   也是 #fff 底 + #1c1c1e 图标，叠在同样被刷成 #fff 的胶囊上 → 白上白；
+ *   原生 ::after 扫光又被 display:none !important 关掉，可见线索只剩一个
+ *   12px 深色三角，与「焦点在文字段」难以区分。
+ *
+ * 本方案（视觉差异）：
+ *   箭头段直接变成 #0e141b 实心块 + 白色三角，是白胶囊上唯一的深色实心块。
+ *   胶囊本体完全交给 tvdeck（白底 + scale + 阴影），不额外加环。
+ *   与「焦点在文字段」（白块 + 深色字）形成明确对照。
+ *   右端圆角不在这里写 border-radius：game.css 的胶囊已有
+ *   border-radius: var(--tvdeck-r-pill)（999px）+ overflow: hidden，
+ *   实心块的右侧会被胶囊裁成圆角。若日后去掉胶囊的 overflow:hidden，
+ *   才需要在这里补 border-radius。
+ *
+ * 颜色（不要改回 var(--tvdeck-tint)）：
+ *   块色写死 #0e141b。tvdeck 的 --tvdeck-tint 默认是蓝色 var(--tvdeck-accent, #0a84ff)，
+ *   跟着它走会得到蓝色块，改变已确认的观感，所以这里必须与 tint 解耦。
+ *   选 #0e141b 而非纯 #000：它就是 Steam 原生箭头聚焦三角色
+ *   （css/chunk~2dcc5aaf7.css 中 color:#0e141b），与 tvdeck 深色玻璃同色系；
+ *   对白三角的对比 #0e141b 为 18.5:1、纯黑 21:1，肉眼无法分辨，
+ *   但纯黑属于两套色板之外的第六个颜色，故不采用。
+ *
+ * 对比度：
+ *   - 白三角 (#fff) 压在 #0e141b 块上：18.5:1，远高于 AAA。
+ *   - 黑块与 tvdeck 的白色聚焦胶囊（#fff）相邻：18.5:1，边界利落。
+ *   - 块状填充不依赖背后的游戏背景图，暗色/亮色场景下表现一致。
+ *
+ * 依赖 token（全部来自 css/tokens.css，未新增颜色常量）：
+ *   --tvdeck-focus-bg  反白色（#fff），用作实心块上的三角色
+ */
+
+/* 箭头段聚焦：#0e141b 实心块 + 白三角。
+   下面这 2 处 !important 必须保留：game.css 第 76–84 行对 background / color
+   也写了 !important，普通声明永远输给它，去掉就等于本文件失效。
+   不要以为可以删——这是覆盖顺序问题，不是冗余。
+   本文件仅此 2 处 !important。若 game.css 将来新增同样带 !important 的
+   箭头焦点规则，需要重新核对覆盖关系。 */
+.BasicUI .basicappdetailssectionstyler_AppActionButton .appactionbutton_ButtonChild.appactionbutton_StreamingSelector:is(.Focusable:focus, .gpfocus) {
+  background: #0e141b !important;
+  color: var(--tvdeck-focus-bg, #fff) !important;
+}

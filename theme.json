@@ -1,6 +1,6 @@
 {
   "name": "tvdeck",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "manifest_version": 9,
   "tabs": {
     "all": [
@@ -227,6 +227,18 @@
       "values": {
         "Yes": {
           "css/options/home-card-lift.css": [
+            "sp"
+          ]
+        },
+        "No": {}
+      }
+    },
+    "Play Caret Focus": {
+      "type": "checkbox",
+      "default": "Yes",
+      "values": {
+        "Yes": {
+          "css/options/play-caret-focus.css": [
             "sp"
           ]
         },
