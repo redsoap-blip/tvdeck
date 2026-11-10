@@ -1,4 +1,0 @@
-/* 跟随系统字体：只使用通用族，由 Chromium/fontconfig 按语言选择实际字体。 */
-:root {
-  --tvdeck-font: system-ui, sans-serif;
-}

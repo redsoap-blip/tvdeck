@@ -20,8 +20,10 @@
 
 /* Das Menü-Fenster liegt über dem Spiel/der Oberfläche: kein echter Blur
    möglich, daher dichtes Glas mit feinem Glanz.
-   overflow:clip hält Schatten und Fokus-Glow innerhalb der Panel-Kanten,
-   ohne einen Scroll-Container zu erzeugen. */
+   overflow:clip hält den Fokus-Glow der Zeilen innerhalb der Panel-Kanten,
+   ohne einen Scroll-Container zu erzeugen; der eigene box-shadow wird davon
+   nicht beschnitten. Für den Schatten gilt die Fensterbreite: links/rechts
+   bleiben nur 10–11px, daher der kurze, im Rand auslaufende Mainmenu-Schatten. */
 .mainmenu_Menu {
   /* Breite aus derselben Variable wie der Platzhalter, beidseitig 10px Luft:
      Default-Slot 240px -> 220px Menü, rechte Kante bleibt im Slot. */
@@ -31,7 +33,7 @@
   box-sizing: border-box;
   background: var(--tvdeck-glass-sheen), var(--tvdeck-glass-solid) !important;
   border-radius: var(--tvdeck-r-xl);
-  box-shadow: var(--tvdeck-panel-shadow), var(--tvdeck-glass-edge);
+  box-shadow: var(--tvdeck-panel-shadow-mainmenu), var(--tvdeck-glass-edge);
   overflow: hidden;
   overflow: clip;
 }

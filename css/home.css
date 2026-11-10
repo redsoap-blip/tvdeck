@@ -16,24 +16,21 @@
 }
 
 /* ---- Spiele-Kacheln (Startseite + Bibliothek) -------------------------- */
-/* Klassen doppelt = höhere Spezifität ohne !important, damit die
+/* Karten-Geometrie und -Aussehen (圆角 / 裁剪 / 底色 / 描边 / 阴影 / 过渡)
+   liegen ausschließlich in css/options/home-card-lift.css, gesteuert über die
+   Option „Home Card Lift“. Hier bleibt nur tvdeck-eigene Dynamik: Ruhe-Transform,
+   Fokus-Skalierung und Parallax. Dadurch schreibt kein zweiter Ort mehr
+   border-radius auf denselben Container.
+   Klassen doppelt = höhere Spezifität ohne !important, damit die
    Parallax-Animation den Transform weiterhin steuern darf. */
 .BasicUI .appportrait_LibraryItemBox.appportrait_LibraryItemBox {
-  border-radius: var(--tvdeck-card-r);
-  overflow: hidden;
   filter: none;
-  outline: none;
-  box-shadow: var(--tvdeck-card-rest-shadow);
   transform: perspective(900px) rotateX(0deg) rotateY(0deg) scale(1);
-  transition: transform var(--tvdeck-dur) var(--tvdeck-spring), box-shadow var(--tvdeck-dur) var(--tvdeck-ease);
 }
 
 .BasicUI .appportrait_LibraryItemBox.appportrait_LibraryItemBox.Focusable:focus,
 .BasicUI .appportrait_LibraryItemBox.appportrait_LibraryItemBox.gpfocus {
-  outline: none !important;
-  filter: none;
   transform: perspective(900px) rotateX(0deg) rotateY(0deg) scale(var(--tvdeck-card-scale));
-  box-shadow: var(--tvdeck-card-shadow);
   animation: var(--tvdeck-parallax) !important;
   z-index: 12;
 }
@@ -129,6 +126,32 @@
   .ReactVirtualized__Grid__innerScrollContainer
   > .Panel:has(.basicgamecarousel_Featured .Focusable:focus) ~ .Panel.Focusable {
   transform: translateX(calc((var(--tvdeck-card-scale-wide) - 1) * 285% + var(--tvdeck-focus-gap)));
+}
+
+/* Trennlinie zwischen breiter Kachel und Reihe ----------------------------
+   Steam rendert die Linie („FeaturedSeparator“) als eigenes, nicht
+   fokussierbares .Panel direkt hinter der Featured-Kachel. Die Regeln oben
+   greifen nur bei .Panel.Focusable – die Linie bleibt also stehen, während
+   die fokussierte Kachel mit transform-origin 6 % nach rechts wächst und sie
+   verdeckt. Darum die Linie im Fokus-Fall um denselben Betrag mitziehen wie
+   die Kacheln der Reihe: (Skalierung − 1) × 285 % einer Reihenkachel
+   (≈ 12,3 vw ⇒ 35 vw) plus --tvdeck-focus-gap. Ihr eigenes Panel ist nur
+   ~19 px breit, deshalb vw statt %. */
+.gamepadhomerecentgames_RecentGamesInnerContainer
+  .ReactVirtualized__Grid__innerScrollContainer
+  > .Panel:is(.basicgamecarousel_FeaturedSeparator, :has(.basicgamecarousel_FeaturedSeparator)) {
+  transition: transform var(--tvdeck-dur) var(--tvdeck-spring);
+}
+
+.gamepadhomerecentgames_RecentGamesInnerContainer
+  .ReactVirtualized__Grid__innerScrollContainer
+  > .Panel:is(.gpfocuswithin, :has(.basicgamecarousel_Featured .gpfocus)):has(.basicgamecarousel_Featured)
+  ~ .Panel:is(.basicgamecarousel_FeaturedSeparator, :has(.basicgamecarousel_FeaturedSeparator)),
+.gamepadhomerecentgames_RecentGamesInnerContainer
+  .ReactVirtualized__Grid__innerScrollContainer
+  > .Panel:has(.basicgamecarousel_Featured .Focusable:focus)
+  ~ .Panel:is(.basicgamecarousel_FeaturedSeparator, :has(.basicgamecarousel_FeaturedSeparator)) {
+  transform: translateX(calc((var(--tvdeck-card-scale-wide) - 1) * 35vw + var(--tvdeck-focus-gap)));
 }
 
 

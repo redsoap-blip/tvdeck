@@ -1,6 +1,5 @@
 /* Recent Games: Kartenzeile + Spielname/Laufzeit unten andocken.
-   Nur aktiv, wenn die Option "Recent Games At Bottom" auf "Yes" steht.
-   Das Vollbild-Hintergrundbild steuert separat "recent-bg-fullscreen.css". */
+   Nur aktiv, wenn die Option "Recent Games At Bottom" auf "Yes" steht. */
 
 /* 1) Der Abschnitt selbst positioniert nur das Karten-Cluster. */
 .gamepadhome_RecentSection_39tNv {
@@ -53,9 +52,7 @@
 /* 6) Das große Hintergrundbild bleibt oben, wenn nur "at bottom" aktiv ist.
       Geometrie: Höhe = Clusterhöhe (100%) + ursprüngliches 24vh-Padding,
       Verschiebung hebt es exakt auf y=0 des Viewports; das 20px-Padding des
-      Abschnitts (Label-Zone) wird mit eingerechnet.
-      Bei aktivem Vollbild-Schalter (height:100vh) wird diese Regel von der
-      spezifischeren Regel in recent-bg-fullscreen.css neutralisiert. */
+      Abschnitts (Label-Zone) wird mit eingerechnet. */
 .gamepadhome_RecentSection_39tNv .gamepadhomerecentgames_RecentGamesBackgroundContainer {
   --tvdeck-art-pad: clamp(54px, 24vh, 210px);
   height: calc(100% + var(--tvdeck-art-pad));

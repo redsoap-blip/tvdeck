@@ -1,6 +1,6 @@
 {
   "name": "tvdeck",
-  "version": "1.1.4",
+  "version": "1.1.8",
   "manifest_version": 9,
   "tabs": {
     "all": [
@@ -116,17 +116,6 @@
         }
       }
     },
-    "Font": {
-      "type": "dropdown",
-      "default": "System font",
-      "values": {
-        "Steam (Motiva Sans)": {},
-        "System font": {
-          "css/font.css": [],
-          "css/options/font-system.css": []
-        }
-      }
-    },
     "Footer": {
       "type": "dropdown",
       "default": "Steam Default",
@@ -158,6 +147,16 @@
         "No": {},
         "Yes": {
           "css/options/reduce-transparency.css": []
+        }
+      }
+    },
+    "Tabular Numbers": {
+      "type": "checkbox",
+      "default": "Yes",
+      "values": {
+        "No": {},
+        "Yes": {
+          "css/options/tabular-nums.css": []
         }
       }
     },
@@ -210,24 +209,24 @@
         "No": {}
       }
     },
-    "Fullscreen Recent Games Background": {
-      "type": "checkbox",
-      "default": "No",
-      "values": {
-        "Yes": {
-          "css/options/recent-bg-fullscreen.css": [
-            "sp"
-          ]
-        },
-        "No": {}
-      }
-    },
     "Titles Above Cards": {
       "type": "checkbox",
       "default": "Yes",
       "values": {
         "Yes": {
           "css/options/titles-above-cards.css": [
+            "sp"
+          ]
+        },
+        "No": {}
+      }
+    },
+    "Home Card Lift": {
+      "type": "checkbox",
+      "default": "Yes",
+      "values": {
+        "Yes": {
+          "css/options/home-card-lift.css": [
             "sp"
           ]
         },

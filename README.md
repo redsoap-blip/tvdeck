@@ -38,14 +38,13 @@ The folder name must stay `tvdeck`: CSS Loader serves theme files by folder name
 | --- | --- | --- |
 | Focus Effect | Apple TV (Parallax) · Subtle · Off | Apple TV (Parallax) |
 | Background | Graphite · Black (OLED) · Aurora (tvOS 26) | Graphite |
-| Font | Steam (Motiva Sans) · System font | System font |
 | Footer | Steam Default · Minimal · Hidden | Steam Default |
 | Keyboard Styling | Yes · No | Yes |
 | Reduce Transparency | Yes · No | No |
+| Tabular Numbers | Yes · No | Yes |
 | Colors | Accent color, toggle color | `#0A84FF` / `#30D158` |
 | Hide friends playing | Yes · No | Yes |
 | Recent Games At Bottom | Yes · No | Yes |
-| Fullscreen Recent Games Background | Yes · No | No |
 | Titles Above Cards | Yes · No | Yes |
 
 ## Notes
@@ -54,8 +53,7 @@ The folder name must stay `tvdeck`: CSS Loader serves theme files by folder name
   with `Recent Games At Bottom` the row stays docked at the bottom and the label follows it upwards.
 - The Steam menu and Quick Access are separate overlay windows and cannot blur the game behind them, so they use
   opaque glass.
-- The theme ships no font files. `System font` resolves to `system-ui, sans-serif`; `Steam (Motiva Sans)` keeps
-  Steam's own font stack.
+- The theme sets no font stacks; text keeps Steam's own fonts so font plugins stay in control.
 - Unofficial fan theme, not affiliated with Apple or Valve.
 
 ## Credits

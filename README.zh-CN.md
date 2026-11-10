@@ -38,14 +38,13 @@
 | --- | --- | --- |
 | Focus Effect（焦点效果） | Apple TV (Parallax) · Subtle · Off | Apple TV (Parallax) |
 | Background（背景） | Graphite · Black (OLED) · Aurora (tvOS 26) | Graphite |
-| Font（字体） | Steam (Motiva Sans) · System font | System font |
 | Footer（底栏） | Steam Default · Minimal · Hidden | Steam Default |
 | Keyboard Styling（键盘样式） | Yes · No | Yes |
 | Reduce Transparency（减少透明） | Yes · No | No |
+| Tabular Numbers（数字等宽对齐） | Yes · No | Yes |
 | Colors（配色） | 强调色、开关色 | `#0A84FF` / `#30D158` |
 | Hide friends playing（隐藏好友动态） | Yes · No | Yes |
 | Recent Games At Bottom（最近游戏置底） | Yes · No | Yes |
-| Fullscreen Recent Games Background（最近游戏全屏背景） | Yes · No | No |
 | Titles Above Cards（标题上移） | Yes · No | Yes |
 
 ## 说明
@@ -53,7 +52,7 @@
 - `Titles Above Cards` 会把当前聚焦游戏的标签移到最近游戏卡片上方，并隐藏「Recent Games」页头；
   与 `Recent Games At Bottom` 组合时，卡片行固定在底部，标签随之上移。
 - Steam 菜单与快捷访问是独立的覆盖窗口，无法模糊其后的游戏画面，因此使用不透明玻璃底色。
-- 主题不自带字体文件。`System font` 解析为 `system-ui, sans-serif`；`Steam (Motiva Sans)` 沿用 Steam 自身的字体栈。
+- 主题不设置任何字体栈，文字沿用 Steam 自身字体，把字体控制权留给字体插件。
 - 非官方粉丝主题，与 Apple、Valve 无关联。
 
 ## 致谢

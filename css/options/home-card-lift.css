@@ -1,0 +1,35 @@
+/* Home Card Lift · Startseite/Bibliothek 封面卡片
+   由独立主题 "home card lift 1.0.2 / css/c3-home.css" 并入，视觉值与其一致；
+   变量取值见 tokens.css（--tvdeck-card-r = 12px，阴影与曲线同值）。
+   卡片几何与外观只在这里声明一次，home.css 不再重复写。
+
+   为什么需要 overflow: hidden：只有 border-radius 而没有裁剪时，Steam 仍按
+   矩形绘制封面图，看起来是“裸图 + 硬边”。这里保留 tvdeck 的卡片几何：
+   12px 圆角 + 裁剪 + 休止阴影。 */
+
+.BasicUI .appportrait_LibraryItemBox.appportrait_LibraryItemBox {
+  border-radius: var(--tvdeck-card-r) !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  /* 玻璃底：图片未铺满或加载中时露出，不参与图片区的视觉 */
+  background-color: rgba(28, 28, 31, 0.86) !important;
+  /* 顶棱高光：画在边框上，不会被封面图盖住 */
+  border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
+  /* 1px 圆角描边：outline 不占布局，也不受 overflow 裁剪 */
+  outline: 1px solid rgba(255, 255, 255, 0.08) !important;
+  outline-offset: -1px !important;
+  box-shadow: var(--tvdeck-card-rest-shadow) !important;
+  transition:
+    transform var(--tvdeck-dur) var(--tvdeck-spring),
+    filter 0.18s ease,
+    box-shadow var(--tvdeck-dur) var(--tvdeck-ease),
+    border-color 0.18s ease !important;
+}
+
+.BasicUI .appportrait_LibraryItemBox.appportrait_LibraryItemBox.Focusable:focus,
+.BasicUI .appportrait_LibraryItemBox.appportrait_LibraryItemBox.gpfocus {
+  border-top-color: rgba(255, 255, 255, 0.34) !important;
+  outline-color: rgba(255, 255, 255, 0.2) !important;
+  filter: brightness(1.07) saturate(1.04) !important;
+  box-shadow: var(--tvdeck-card-shadow) !important;
+}

@@ -25,10 +25,13 @@ Shots taken at 3840×2160 with default options on a 16:9 setup. They live in the
 - Home screen reduced to a single Top Shelf-like row: the tabbed content area under the hero artwork is hidden (`css/no-home-tabs.css`).
 - Optional **Recent Games At Bottom** mode that docks the recent-games row to the bottom edge of the screen while keeping the artwork full-bleed.
 - Optional **Titles Above Cards** mode that moves the focused game's label above the card row and hides the "Recent Games" header.
+- Optional **Home Card Lift** mode, on by default, that rounds, clips and lifts the Home/Library cards.
 - Optional switch to hide friend avatars on game cards ("Hide friends playing").
+- Optional switch for tabular figures, so clock, battery and download numbers stop shifting.
 - Custom styling for the Main Menu, Quick Access, notifications/toasts, keyboard and settings screens.
-- Selectable background (Graphite, OLED black, Aurora gradient), font and footer style.
+- Selectable background (Graphite, OLED black, Aurora gradient) and footer style.
 - Accent and toggle colours can be changed from CSS Loader.
+- Text keeps Steam's own fonts: the theme sets no font stacks, so font plugins stay in control.
 
 ## Requirements
 
@@ -39,7 +42,7 @@ Shots taken at 3840×2160 with default options on a 16:9 setup. They live in the
 ## Installation
 
 1. Install **Decky Loader** and then the **CSS Loader** plugin from Decky's plugin store.
-2. Download the release archive (`tvdeck-1.1.4.zip`) and extract it so that the folder is named `tvdeck`.
+2. Download the release archive (`tvdeck-1.1.8.zip`) and extract it so that the folder is named `tvdeck`.
    The archive is an install-only package (`theme.json`, `LICENSE`, `css/`); it contains no README or screenshots.
 3. Copy that folder to `~/homebrew/themes/tvdeck`.
    The final path should be `~/homebrew/themes/tvdeck/theme.json`.
@@ -54,31 +57,34 @@ Keep the extracted folder named `tvdeck`, because theme assets are served by fol
 | --- | --- | --- | --- |
 | Focus Effect | Apple TV (Parallax) · Subtle · Off | Apple TV (Parallax) | Controls card/focus scaling and parallax. `Subtle` reduces the scale and removes parallax; `Off` disables scaling, parallax and gloss. |
 | Background | Graphite · Black (OLED) · Aurora (tvOS 26) | Graphite | `Black (OLED)` uses pure black; `Aurora` adds layered blue/green radial gradients over a near-black base. |
-| Font | Steam (Motiva Sans) · System font | System font | `Steam (Motiva Sans)` keeps Steam's own font stack; `System font` uses `system-ui, sans-serif` and follows the system font settings. |
 | Footer | Steam Default · Minimal · Hidden | Steam Default | `Minimal` applies the compact footer styling; `Hidden` additionally hides the footer. |
 | Keyboard Styling | Yes · No | Yes | Applies the themed on-screen keyboard when enabled. |
 | Reduce Transparency | Yes · No | No | Replaces translucent surfaces with more opaque ones. |
+| Tabular Numbers | Yes · No | Yes | Gives clock, battery and download numbers equal-width digits so they stop shifting. |
 | Colors | Accent Color · Toggle Color (colour pickers) | `#0A84FF` / `#30D158` | Sets the accent colour and the switch/toggle colour via CSS variables. |
 | Hide friends playing | Yes · No | Yes | Hides the friend-avatar bar on portrait game cards (recent games, library grid, game details and similar). |
 | Recent Games At Bottom | Yes · No | Yes | Pins the recent-games row and its labels to the bottom edge; the section background still covers the full window height. |
-| Fullscreen Recent Games Background | Yes · No | No | Lets the recent-games artwork cover the full window height when the bottom-docked mode is used. |
 | Titles Above Cards | Yes · No | Yes | Hides the "Recent Games" header and moves the focused game's label (name, 2-week playtime, friends playing) above the card row; the label is anchored to the card's top edge, so no fixed offset is used. Combined with `Recent Games At Bottom` the row stays docked at the bottom and the label sits above it; the label zone above the row is reserved by padding, so the first row is not covered. With `No`, labels stay below the cards, as in vanilla Steam. |
+| Home Card Lift | Yes · No | Yes | Rounds the Home/Library cards to 12px, clips the artwork so the corners are really cut, adds a top highlight and a 1px inner contour, and lifts the card with a soft shadow. With `No`, cards keep Steam's square corners. |
 
 ## Differences from tvOS Deck
 
 tvdeck is derived from [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) by **K€YOZ** (upstream version 1.1.0). The main differences in this build:
 
-| Area | tvOS Deck (upstream) | tvdeck 1.1.4 |
+| Area | tvOS Deck (upstream) | tvdeck 1.1.8 |
 | --- | --- | --- |
 | Option labels | Partly Chinese (`跟随系统字体`, `隐藏好友正在游玩`) | All labels in English |
-| Font default | SF Pro / Inter (bundled upstream) | System font (no font files bundled) |
+| Font control | Bundled SF Pro / Inter | No font stacks; text keeps Steam's fonts |
 | Footer default | Minimal | Steam Default |
 | Recent Games At Bottom | Not available | New optional bottom-docked mode |
 | Titles Above Cards | Not available | New optional above-card label mode |
+| Home Card Lift | Not available | New optional rounding/clipping mode, on by default |
+| Fullscreen recent background | Optional switch | Removed |
+| Tabular figures | Not available | New optional switch, on by default |
 | Home layout | Tabbed content hidden via `no-home-tabs.css` | Same rule, kept intentionally |
 | Friend avatar toggle | Present under a Chinese label, default Yes | Present as "Hide friends playing", default Yes |
 | Label spacing | — | Extra offset between card and game label, used by the bottom-docked mode |
-| Version / author | 1.1.0, K€YOZ | 1.1.4, Honchane |
+| Version / author | 1.1.0, K€YOZ | 1.1.8, Honchane |
 
 The rest of the styling, including most CSS rules and token values, comes from upstream. See the licence section below.
 
@@ -87,7 +93,7 @@ The rest of the styling, including most CSS rules and token values, comes from u
 - **Recent Games At Bottom is a trade-off.** The recent-games row is fixed to the bottom of the viewport, while its background layer is stretched over the whole window. On some layouts the artwork crop or the label area may look different from the default home screen; check it on your own display.
 - **Steam UI updates can break selectors.** The theme targets hashed Steam class names. A Steam client update may rename them and cause parts of the theme to stop applying until the theme is updated. No specific Steam version is guaranteed.
 - **Main Menu and Quick Access are separate overlay windows.** They cannot blur the game behind them, so they use opaque glass instead of a true backdrop blur.
-- **No fonts are bundled.** `System font` relies on `system-ui, sans-serif`, so the rendered font is whatever the OS font stack resolves to; `Steam (Motiva Sans)` keeps Steam's own stack.
+- **No font stacks are set.** The theme deliberately leaves typography to Steam and to font plugins such as Decky's font plugin; nothing here overrides `font-family`.
 - **Unofficial theme.** It is not endorsed by Valve, Apple or the tvOS Deck maintainers.
 
 ## Credits and licence
