@@ -44,13 +44,13 @@ tvdeck/
 ├── theme.json
 ├── LICENSE
 ├── README.md
-├── README.zh-CN.md
+├── README.en.md
 ├── screenshots/            (1920×1080 PNG, README only)
 ├── css/ …
 └── dist-release/           (this file, release notes, the built zip)
 ```
 
-`README.zh-CN.md` is the Simplified Chinese translation of `README.md` and is cross-linked from it; like `README.md` and `screenshots/`, it stays in the repository and is excluded from the zip.
+`README.md` is the default documentation in Simplified Chinese, and `README.en.md` is its English translation, cross-linked from `README.md`; like `README.md` and `screenshots/`, `README.en.md` stays in the repository and is excluded from the zip.
 
 ## File name
 
@@ -69,7 +69,7 @@ This yields exactly 22 files: `theme.json` + `LICENSE` + 20 CSS files. The archi
 
 - `config_USER.json` — per-user CSS Loader settings, machine-specific.
 - `README.md` — repository documentation; the zip is an install-only package.
-- `README.zh-CN.md` — Simplified Chinese documentation, same rule as `README.md`.
+- `README.en.md` — English translation, same rule as `README.md`.
 - `screenshots/` — images for the repository README only, never in the zip.
 - `dist-release/` — build notes, drafts and this file.
 - Any `.git/`, `.gitignore`, `.github/` working data, editor folders (`.vscode/`, `.idea/`).
@@ -89,7 +89,7 @@ cd "$HOME/homebrew/themes"      # <themes-dir>: the parent folder of tvdeck/
 zip -r tvdeck-1.1.9.zip tvdeck \
   -x "tvdeck/config_USER.json" \
   -x "tvdeck/README.md" \
-  -x "tvdeck/README.zh-CN.md" \
+  -x "tvdeck/README.en.md" \
   -x "tvdeck/screenshots/*" \
   -x "tvdeck/dist-release/*" \
   -x "tvdeck/.git/*" \
