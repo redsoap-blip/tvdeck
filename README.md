@@ -1,72 +1,71 @@
 # tvdeck
 
-Apple TV / tvOS look for SteamOS Game Mode – Steam Machine (16:9, 4K), Steam Deck and Big Picture.
-A theme for CSS Loader (Decky Loader).
+为 SteamOS 游戏模式（Steam Machine，16:9 / 4K）、Steam Deck 与大屏幕模式提供 Apple TV / tvOS 风格外观。
+适用于 CSS Loader（Decky Loader）的主题。
 
-Based on [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) by **K€YOZ** (MIT).
+基于 [**K€YOZ** 的 **tvOS Deck**](https://github.com/zoyekerako/tvos-deck)（MIT 许可）。
 
-[简体中文说明](README.zh-CN.md)
+[English README](README.en.md)
 
-## Screenshots
+## 截图
 
-![Home screen: labels above the recent-games row](screenshots/home-titles-above.png)
-![Quick Access: quick settings panel](screenshots/qam-quick-settings.png)
-![Game detail page](screenshots/game-detail.png)
+![主界面：标题位于最近游戏卡片上方](screenshots/home-titles-above.png)
+![快捷访问：快速设置面板](screenshots/qam-quick-settings.png)
+![游戏详情页](screenshots/game-detail.png)
 
-## Install
+## 安装
 
-[Decky Loader](https://decky.xyz) with the **CSS Loader** plugin is required either way.
+两种方式都需要先安装 [Decky Loader](https://decky.xyz) 以及 **CSS Loader** 插件。
 
-### From the latest release (recommended)
+### 用最新 Release（推荐）
 
-1. Download the theme archive from the [latest release](../../releases/latest).
-2. Extract it and copy the resulting folder to `~/homebrew/themes/tvdeck`, so that the theme manifest ends up at `~/homebrew/themes/tvdeck/theme.json`.
-3. Quick Access (…) → CSS Loader → enable **tvdeck**.
-4. Recommended: Steam *Settings → Customization → Home → Big Art Mode* for the Apple TV Top Shelf layout.
+1. 从[最新 Release](../../releases/latest) 下载主题压缩包。
+2. 解压后把得到的文件夹复制到 `~/homebrew/themes/tvdeck`，最终主题清单应位于 `~/homebrew/themes/tvdeck/theme.json`。
+3. 快捷访问（…）→ CSS Loader → 启用 **tvdeck**。
+4. 推荐：在 Steam *设置 → 自定义 → 主页 → 大画幅模式（Big Art Mode）* 下使用，以获得 Apple TV 顶栏式主界面。
 
-### Manually
+### 手动安装
 
-1. Copy this folder to `~/homebrew/themes/tvdeck`.
-2. Quick Access (…) → CSS Loader → enable **tvdeck**.
-3. Recommended: Steam *Settings → Customization → Home → Big Art Mode* for the Apple TV Top Shelf layout.
+1. 把本文件夹复制到 `~/homebrew/themes/tvdeck`。
+2. 快捷访问（…）→ CSS Loader → 启用 **tvdeck**。
+3. 推荐：在 Steam *设置 → 自定义 → 主页 → 大画幅模式（Big Art Mode）* 下使用，以获得 Apple TV 顶栏式主界面。
 
-The folder name must stay `tvdeck`: CSS Loader serves theme files by folder name. The release archive already unpacks to a folder with that name.
+文件夹名必须保持 `tvdeck`：CSS Loader 按文件夹名提供主题文件。Release 压缩包解压后本身就是这个文件夹名。
 
-## Options
+## 选项
 
-| Option | Values | Default |
+| 选项 | 可选值 | 默认值 |
 | --- | --- | --- |
-| Focus Effect | Apple TV (Parallax) · Subtle · Off | Apple TV (Parallax) |
-| Background | Graphite · Black (OLED) · Aurora (tvOS 26) | Graphite |
-| Footer | Steam Default · Minimal · Hidden | Steam Default |
-| Keyboard Styling | Yes · No | Yes |
-| Reduce Transparency | Yes · No | No |
-| Tabular Numbers | Yes · No | Yes |
-| Colors | Accent color, toggle color | `#0A84FF` / `#30D158` |
-| Hide friends playing | Yes · No | Yes |
-| Recent Games At Bottom | Yes · No | Yes |
-| Titles Above Cards | Yes · No | Yes |
-| Home Card Lift | Yes · No | Yes |
-| Play Caret Focus | Yes · No | Yes |
+| Focus Effect（焦点效果） | Apple TV (Parallax) · Subtle · Off | Apple TV (Parallax) |
+| Background（背景） | Graphite · Black (OLED) · Aurora (tvOS 26) | Graphite |
+| Footer（底栏） | Steam Default · Minimal · Hidden | Steam Default |
+| Keyboard Styling（键盘样式） | Yes · No | Yes |
+| Reduce Transparency（减少透明） | Yes · No | No |
+| Tabular Numbers（数字等宽对齐） | Yes · No | Yes |
+| Colors（配色） | 强调色、开关色 | `#0A84FF` / `#30D158` |
+| Hide friends playing（隐藏好友动态） | Yes · No | Yes |
+| Recent Games At Bottom（最近游戏置底） | Yes · No | Yes |
+| Titles Above Cards（标题上移） | Yes · No | Yes |
+| Home Card Lift（卡片浮起） | Yes · No | Yes |
+| Play Caret Focus（开始游戏箭头聚焦高亮） | Yes · No | Yes |
 
-## Notes
+## 说明
 
-- `Titles Above Cards` moves the focused game's label above the recent-games row and hides the "Recent Games" header;
-  with `Recent Games At Bottom` the row stays docked at the bottom and the label follows it upwards.
-- The Steam menu and Quick Access are separate overlay windows and cannot blur the game behind them, so they use
-  opaque glass.
-- The theme sets no font stacks; text keeps Steam's own fonts so font plugins stay in control.
-- Unofficial fan theme, not affiliated with Apple or Valve.
+- `Titles Above Cards` 会把当前聚焦游戏的标签移到最近游戏卡片上方，并隐藏「Recent Games」页头；
+  与 `Recent Games At Bottom` 组合时，卡片行固定在底部，标签随之上移。
+- Steam 菜单与快捷访问是独立的覆盖窗口，无法模糊其后的游戏画面，因此使用不透明玻璃底色。
+- 主题不设置任何字体栈，文字沿用 Steam 自身字体，把字体控制权留给字体插件。
+- 非官方粉丝主题，与 Apple、Valve 无关联。
 
-## Credits
+## 致谢
 
-tvdeck is derived from [**tvOS Deck**](https://github.com/zoyekerako/tvos-deck) by **K€YOZ** (upstream version 1.1.0, MIT licence). The original
-copyright line is retained in [LICENSE](LICENSE); modifications are by Honchane.
+tvdeck 派生自 [**K€YOZ** 的 **tvOS Deck**](https://github.com/zoyekerako/tvos-deck)（上游版本 1.1.0，MIT 许可）。上游版权声明保留在
+[LICENSE](LICENSE) 中，修改部分由 Honchane 完成。
 
-The tab-hiding rule follows [No Home Tabs by Sims](https://deckthemes.com/themes/view?themeId=1f13929d-cb5b-4ab9-985f-a69504e055fe) (v1.0, 2023).
-This project also drew on [Switch Like Home by Sims](https://deckthemes.com/themes/view?themeId=9ac2bf60-66c5-4f50-aa6b-f897465ba328) (v1.4, 2024)
-and [No Friend Playing Icon by Luna-Terra](https://deckthemes.com/themes/view?themeId=88363437-0fc3-44f7-9ae4-0ced63893aca) (2025).
-All three are third-party DeckThemes themes not published by this repository's author.
+隐藏 tab 的做法沿用 [No Home Tabs by Sims](https://deckthemes.com/themes/view?themeId=1f13929d-cb5b-4ab9-985f-a69504e055fe)（v1.0，2023 年）。
+本项目还参考了 [Switch Like Home by Sims](https://deckthemes.com/themes/view?themeId=9ac2bf60-66c5-4f50-aa6b-f897465ba328)（v1.4，2024 年）
+与 [No Friend Playing Icon by Luna-Terra](https://deckthemes.com/themes/view?themeId=88363437-0fc3-44f7-9ae4-0ced63893aca)（2025 年）。
+三者均为第三方 DeckThemes 主题，均非本仓库作者发布。
 
 ## Deutsch
 
