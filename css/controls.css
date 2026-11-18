@@ -616,3 +616,61 @@ button.gamepaddropdown_DropDownControlButton.DialogButton {
     min-height: 0.5px !important;
   }
 }
+
+/* ==========================================================================
+   Decky 插件字体卡片（FontPicker）聚焦态修正
+   问题：tvdeck 的 DialogButton 聚焦规则 (0,4,1) 会压过 FontPicker 自己的
+   聚焦样式 (0,3,2)，叠加基础态的 999px 胶囊圆角，聚焦展开的字体卡
+   （高约 300px）会被钳制成半圆，呈现为一块白色椭圆，且卡内浅灰样张
+   文字在白底上几乎不可读。
+   方案：用更高特异性只命中含 .fp-font-row 的字体卡，保留「聚焦=白底
+   深字」的 tvOS 语言，修正形状为中等圆角 + 1.01 微放大，并把卡内文字
+   转为深色梯度。
+   ========================================================================== */
+
+button.gamepaddialog_Button.DialogButton.gpfocus:has(.fp-font-row),
+button.gamepaddialog_Button.DialogButton:enabled.gpfocus:has(.fp-font-row),
+button.gamepaddialog_Button.DialogButton:enabled:active:hover.gpfocus:has(.fp-font-row) {
+  background: var(--tvdeck-focus-bg) !important;
+  color: var(--tvdeck-focus-fg) !important;
+  border-radius: var(--tvdeck-r-l) !important;
+  transform: scale(1.01);
+  box-shadow: var(--tvdeck-focus-shadow) !important;
+  border-left: none !important;
+}
+
+/* 白底上的文字梯度：名字主角色 / 样张次级灰 / 标签用 tvdeck 蓝 */
+button.gamepaddialog_Button.DialogButton.gpfocus:has(.fp-font-row) .fp-fname {
+  color: #1c1c1e !important;
+}
+
+button.gamepaddialog_Button.DialogButton.gpfocus:has(.fp-font-row) .fp-prev,
+button.gamepaddialog_Button.DialogButton.gpfocus:has(.fp-font-row) .fp-prev-b,
+button.gamepaddialog_Button.DialogButton.gpfocus:has(.fp-font-row) .fp-ex-line {
+  color: #6e6e73 !important;
+}
+
+button.gamepaddialog_Button.DialogButton.gpfocus:has(.fp-font-row) .fp-badge,
+button.gamepaddialog_Button.DialogButton.gpfocus:has(.fp-font-row) .fp-ex-label {
+  color: var(--tvdeck-blue) !important;
+}
+
+/* 卡内分隔线在白底上改为浅灰实线（插件默认是白色系半透明，白底上不可见） */
+button.gamepaddialog_Button.DialogButton.gpfocus:has(.fp-font-row) .fp-prev-b,
+button.gamepaddialog_Button.DialogButton.gpfocus:has(.fp-font-row) .fp-ex {
+  border-top-color: #e5e5ea !important;
+}
+
+/* --------------------------------------------------------------------------
+   未聚焦字体卡协调化（1.1.12）
+   聚焦卡已统一为 22px 圆角（--tvdeck-r-l）；未聚焦卡此前仍是 tvdeck
+   基础态的 999px 胶囊圆角，与聚焦卡是两种几何语言。这里只对含
+   .fp-font-row 的字体卡把圆角统一为 22px。
+   注：1.1.11 曾在此加 6px 行间距（呼吸感），1.1.12 撤回，落点（插件侧
+   或本主题）待审查，见 font picker workspace/
+   fontrow_description_spacing_proposal_20261118.md。描述行注脚化方案同待审查。
+   -------------------------------------------------------------------------- */
+button.gamepaddialog_Button.DialogButton:has(.fp-font-row),
+button.gamepaddialog_Button.DialogButton:enabled:has(.fp-font-row) {
+  border-radius: var(--tvdeck-r-l) !important;
+}
